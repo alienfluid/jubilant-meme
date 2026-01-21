@@ -15,12 +15,13 @@ A simple web application with FastAPI backend and HTMX frontend, using SQLite fo
 ```
 test_project/
 ├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── main.py          # FastAPI app entry point
-│   │   ├── models.py        # SQLAlchemy models
-│   │   └── database.py      # Database setup
-│   └── pyproject.toml       # uv project dependencies
+│   ├── __init__.py
+│   └── app/
+│       ├── __init__.py
+│       ├── main.py          # FastAPI app entry point
+│       ├── models.py        # SQLAlchemy models
+│       └── database.py      # Database setup
+├── pyproject.toml           # uv project dependencies
 ├── frontend/
 │   └── templates/
 │       └── index.html       # Main HTML page with HTMX
@@ -38,7 +39,7 @@ test_project/
 
 1. Install dependencies:
    ```bash
-   cd backend
+   cd /Users/fah/code/test_project
    uv sync
    ```
 
@@ -50,10 +51,10 @@ test_project/
    
    ```bash
    # Option 2: Run manually from project root
-   uv run --directory backend uvicorn app.main:app --reload
+   uv run uvicorn backend.app.main:app --reload
    ```
    
-   This runs the app from the `backend` directory, where the `app` package is available.
+   This runs the app from the project root, where the `backend` package is available.
 
 3. Open your browser and navigate to `http://localhost:8000`
 
